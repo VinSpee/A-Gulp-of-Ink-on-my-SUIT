@@ -1,0 +1,50 @@
+{
+  "name": "a-gulp-of-ink-on-my-suit",
+  "version": "0.1.1",
+  "description": "An opinionated environment for developing emails based on Zurb's Ink framework in the SUIT style using gulp.",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-autoprefixer": "0.0.8",
+    "gulp-changed": "^0.4.1",
+    "gulp-csso": "^0.2.9",
+    "gulp-filter": "^1.0.0",
+    "gulp-imagemin": "^0.6.2",
+    "gulp-inline-css": "^0.2.7",
+    "gulp-minify-html": "^0.1.4",
+    "gulp-rimraf": "^0.1.0",
+    "gulp-size": "^1.0.0",
+    "gulp-util": "^3.0.0",
+    "gulp-webserver": "^0.6.0",
+    "minimist": "^0.2.0",
+    "myth": "^1.1.1",
+    "rework-deduplicate": "^0.1.1",
+    "rework-inherit": "^0.2.3",
+    "rework-namespace": "^0.3.0",
+    "rework-npm": "^1.0.0",
+    "rework-plugin-ease": "^1.0.1",
+    "rework-suit": "^4.0.0",
+    "rework-vars": "^3.1.1",
+    "run-sequence": "^0.3.6",
+    "suitcss-ink": "^0.1.1",
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VinSpee/projectologist.git"
+  },
+  "keywords": [
+    "suit",
+    "email",
+    "ink",
+    "gulp"
+  ],
+  "author": "Vince Speelman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VinSpee/A-Gulp-of-Ink-on-my-SUIT/issues"
+  },
+  "homepage": "https://github.com/VinSpee/A-Gulp-of-Ink-on-my-SUIT"
+}
