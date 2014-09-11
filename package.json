@@ -26,7 +26,7 @@
     "rework-suit": "^4.0.0",
     "rework-vars": "^3.1.1",
     "run-sequence": "^0.3.6",
-    "suitcss-ink": "^0.1.1",
+    "suitcss-ink": "^0.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
