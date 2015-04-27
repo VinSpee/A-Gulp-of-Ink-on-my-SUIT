@@ -2,35 +2,41 @@ var gulp = require('gulp');
 
 gulp.task('styles', function() {
 	var handleErrors = require('../util/handleErrors');
-	var paths        = require('../config/paths');
+	var paths = require('../config/paths');
 	var autoprefixer = require('gulp-autoprefixer');
-	var dedupe       = require('rework-deduplicate');
-	var ease         = require('rework-plugin-ease');
-	var imprt        = require('rework-npm');
-	var inherit      = require('rework-inherit');
-	var myth         = require('myth');
-	var namespace    = require('rework-namespace');
-	var plumber      = require('gulp-plumber');
-	var rename       = require('gulp-rename');
-	var rework       = require('gulp-rework');
-	var suit         = require('rework-suit');
+	var plumber = require('gulp-plumber');
+	var rename = require('gulp-rename');
+	var postcss = require('gulp-postcss');
+	var sourcemaps = require('gulp-sourcemaps');
+	var postcss = require('gulp-postcss');
+	var autoprefixer = require('gulp-autoprefixer');
+	var calc = require('postcss-calc');
+	var colorFunction = require('postcss-color-function');
+	var customMedia = require('postcss-custom-media');
+	var customProperties = require('postcss-custom-properties');
+	var customSelectors = require('postcss-custom-selectors');
+	var fontVariant = require('postcss-font-variant');
+	var inline = require('postcss-import');
+	var nested = require('postcss-nested');
+	var simpleVars = require('postcss-simple-vars');
 
-	var ns = '';
 	return gulp.src(paths.source.main_style)
 		.pipe(plumber(handleErrors))
-		.pipe(rework(
-			suit({
-				path: [
-					'./app/styles',
-					'node_modules',
-				]
+		.pipe(sourcemaps.init())
+		.pipe(postcss([
+			inline({
+				path: ['app/styles']
 			}),
-			inherit(),
-			myth(),
-			ease(),
-			dedupe(),
-			namespace(ns),
-			{sourcemap: true})
-		)
+			customProperties(),
+			calc(),
+			simpleVars(),
+			customSelectors(),
+			nested,
+			customMedia(),
+			colorFunction(),
+			fontVariant()
+		]))
+		.pipe(autoprefixer())
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(paths.dest.styles));
 });
